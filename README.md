@@ -4,8 +4,8 @@
 
 ### Security log intelligence, playbook detection, and forensic reporting
 
-**A Python-based log analysis and alerting platform for SOC, security operations, and incident investigation workflows.**
-It combines multi-source log ingestion, structured threat playbooks, MITRE ATT&CK correlation, desktop/web interfaces, and automated reporting in a single operational toolkit.
+**A Python-powered security analytics platform for SOC workflows, threat detection, and forensic investigation.**
+It ingests logs from multiple platforms, applies structured playbook logic, correlates events to MITRE ATT&CK patterns, and produces actionable investigation reports from raw security telemetry.
 
 <br/>
 
@@ -20,20 +20,20 @@ It combines multi-source log ingestion, structured threat playbooks, MITRE ATT&C
 ---
 
 > [!IMPORTANT]
-> This project is built for defensive cyber operations and authorized log review. It is intended for security monitoring, detection engineering, investigation support, and operational reporting — not for unauthorized surveillance or malicious activity.
+> This platform is intended for defensive security monitoring, authorized log review, and incident investigation. It should be used strictly in accordance with organizational policy, compliance requirements, and lawful operational scope.
 
 ---
 
-## ✨ What this project does
+## ✨ What it does
 
-| Area | Capability |
+| | |
 |---|---|
-| 🔐 Threat detection | Rule-based correlation for brute force, privilege misuse, web exploitation, recon activity, malware delivery, and data exfiltration patterns |
-| 🧠 MITRE mapping | ATT&CK-aligned playbook logic for common attack behaviors and suspicious security events |
-| 📊 Multi-source ingestion | Windows Event Logs, Linux/macOS syslog, Apache/Nginx/IIS logs, DNS, proxies, Fortinet data, and OSFC-style telemetry |
-| 🧩 Playbook engine | JSON-driven detection rules and operational runbooks for multiple platform and attack categories |
-| 🖥️ Interface options | Web dashboard plus desktop GUI launcher for local collection and analysis |
-| 📄 Reporting | PDF, CSV, HTML, and structured security summaries for investigations and stakeholder handoff |
+| 🔐 **Threat detection** | Correlates authentication failures, privilege escalation attempts, web exploitation, reconnaissance, malware delivery, and exfiltration patterns from live or historic log data. |
+| 🧠 **MITRE ATT&CK mapping** | Maps suspicious events to known adversary behaviors and tactics using structured playbook metadata and detection categories. |
+| 📊 **Multi-source log support** | Handles Windows Event Logs, Linux/macOS system logs, Apache/Nginx/IIS logs, DNS, proxy, Fortinet, and OSFC-style telemetry. |
+| 🧩 **Playbook engine** | Uses JSON-based playbooks and runbooks to drive detection logic across multiple platforms and attack classes. |
+| 🖥️ **Dual interface model** | Provides both browser-based analysis and a desktop launcher for local collection and review. |
+| 📄 **Reporting** | Produces CSV, HTML, and PDF summaries for analysts, responders, and stakeholders. |
 
 ---
 
@@ -42,14 +42,14 @@ It combines multi-source log ingestion, structured threat playbooks, MITRE ATT&C
 ```bash
 # 1. create a virtual environment
 python -m venv .venv
-source .venv/bin/activate   # Linux/macOS
-# .venv\Scripts\activate    # Windows
+source .venv/bin/activate        # Linux/macOS
+# .venv\Scripts\activate         # Windows
 
 # 2. install dependencies
 pip install --upgrade pip
 pip install flask werkzeug plotly watchdog reportlab
 
-# 3. run the app
+# 3. run the project
 python run_portable.py
 # or
 python Launcher.py
@@ -63,7 +63,7 @@ Open the application in a browser at:
 http://localhost:5000
 ```
 
-> The portable launcher automatically detects the playbook scope and starts the application in the most suitable mode.
+> The portable launcher automatically detects the active playbook scope and starts the tool in the appropriate mode.
 
 ---
 
@@ -71,25 +71,25 @@ http://localhost:5000
 
 | Component | Notes |
 |---|---|
-| Python 3.10+ | Required runtime |
-| pip | For dependency installation |
-| Flask | Web interface and request handling |
-| Plotly | Visualization and dashboard metrics |
-| Watchdog | File system monitoring support |
-| ReportLab | PDF report generation |
-| SQLite | Local storage for collected data and stats |
-| OS support | Works across Windows, Linux, and macOS environments |
+| **Python 3.10+** | Required runtime |
+| **pip** | Dependency installation |
+| **Flask** | Web dashboard and request handlers |
+| **Plotly** | Graphs and visual summaries |
+| **Watchdog** | File monitoring support |
+| **ReportLab** | PDF generation |
+| **SQLite** | Local log and report database storage |
+| **Windows / Linux / macOS** | Cross-platform execution support |
 
 ---
 
 ## ⚙️ Configuration
 
-The application uses configuration values from [`config.json`](config.json) and supports environment-driven playbook selection through variables such as:
+The application reads runtime settings from [`config.json`](config.json) and supports playbook selection through environment variables such as:
 
 - `ACTIVE_PLAYBOOK_TYPES`
 - `ACTIVE_PLAYBOOK_TYPE`
 
-Example runtime settings in [`config.json`](config.json):
+Example configuration:
 
 ```json
 {
@@ -104,11 +104,16 @@ Example runtime settings in [`config.json`](config.json):
     "auto_generate": true,
     "format": "pdf",
     "output_directory": "reports"
+  },
+  "web_interface": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": false
   }
 }
 ```
 
-This gives the project a lightweight configuration layer for playbook scope, monitoring, and report output.
+This configuration layer allows the app to tailor detection scope and reporting behavior based on the deployment or monitoring environment.
 
 ---
 
@@ -116,105 +121,158 @@ This gives the project a lightweight configuration layer for playbook scope, mon
 
 ```text
 .
-├── Log_Analyzer.py              # Core Flask web app and analysis engine
-├── Launcher.py                  # GUI launcher for web/desktop modes
+├── Log_Analyzer.py              # Core Flask app and analysis engine
+├── Launcher.py                  # GUI launcher for web and desktop modes
 ├── LogCollector_GUI.py          # Desktop log collection interface
 ├── run_portable.py              # Portable startup entry point
-├── start_portable.sh            # Shell launcher for portable mode
-├── deployment_helper.py         # Deployment and environment helper
-├── diagnose_view_rules.py       # Diagnostic helper for playbook visibility
-├── playbooks.json               # Main playbook definitions
-├── playbooks_windows.json       # Windows log detection rules
-├── playbooks_linux.json         # Linux log detection rules
-├── playbooks_mac.json           # macOS detection rules
-├── playbooks_apache.json        # Apache log attack signatures
-├── playbooks_nginx.json         # NGINX log signatures
-├── playbooks_iis.json           # IIS log analysis rules
-├── playbooks_dns.json           # DNS analysis signatures
-├── playbooks_proxy.json         # Proxy/firewall indicators
-├── playbooks_fortinet.json      # Fortinet detection rules
-├── playbooks_syslog.json        # Syslog rules
+├── start_portable.sh            # Shell-based launcher
+├── deployment_helper.py         # Deployment assistance utilities
+├── diagnose_view_rules.py       # Playbook diagnostics
+├── playbooks.json               # Primary playbook definitions
+├── playbooks_windows.json       # Windows event rules
+├── playbooks_linux.json         # Linux event rules
+├── playbooks_mac.json           # macOS event rules
+├── playbooks_apache.json        # Apache log patterns
+├── playbooks_nginx.json         # NGINX log patterns
+├── playbooks_iis.json           # IIS log patterns
+├── playbooks_dns.json           # DNS patterns
+├── playbooks_proxy.json         # Proxy and firewall rules
+├── playbooks_fortinet.json      # Fortinet detection logic
+├── playbooks_syslog.json        # Syslog handling rules
 ├── playbooks_osfc.json          # OSFC-related rules
 ├── playbook_selector_modal.html # UI modal for playbook selection
-├── runbooks.json                # Response runbooks for detected playbooks
-├── config.json                  # Runtime configuration file
-├── uploads/                     # Uploaded logs and forensic files
-├── reports/                     # Generated HTML/PDF/CSV outputs
-├── logs.db                      # SQLite inspection database
-├── sample_ocfs.log              # Example sample log input
+├── runbooks.json                # Response guidance for matched playbooks
+├── config.json                  # Runtime configuration
+├── uploads/                     # Uploaded log files and artifacts
+├── reports/                     # HTML / CSV / PDF output files
+├── logs.db                      # SQLite database for collected records
+├── sample_ocfs.log              # Sample data source
 ├── README.md                    # Project documentation
-└── .git/                        # Version control metadata
+├── .git/                        # Repository metadata
+└── __pycache__/                 # Python cache files
 ```
 
 ---
 
 ## 🔄 How it works
 
-The application follows a practical security-analysis workflow:
+The system follows a standard security-analysis lifecycle:
 
-1. A log source is ingested from files, system locations, or collected streams.
-2. The engine normalizes and classifies the raw records.
-3. Detection logic matches known attack patterns from the configured playbook set.
-4. Matching events are correlated with related time windows, users, IPs, and device signals.
-5. Findings are mapped to MITRE ATT&CK techniques when applicable.
-6. The results are shown in the dashboard and exported into operational reports.
+1. **Log ingestion** — event data is imported from files, system sources, or desktop collection workflows.
+2. **Normalization** — records are classified by source, type, severity, and time window.
+3. **Detection** — the playbook engine checks for known malicious or suspicious patterns.
+4. **Correlation** — events are grouped by user, host, IP, service, and time to reveal attack sequences.
+5. **Mapping** — matched incidents are linked to ATT&CK-style categories and operational guidance.
+6. **Reporting** — findings are presented through the dashboard and exported as security reports.
 
-The project is designed to support both live monitoring and post-incident review.
+This makes the project useful both for continuous monitoring and post-incident investigation.
+
+---
+
+## 🧱 Architecture
+
+```mermaid
+flowchart LR
+    A[Log Sources<br/>Windows / Linux / Web / Firewall / Network] --> B[Data Ingestion Layer]
+    B --> C[Log Normalization & Classification]
+    C --> D[Playbook Detection Engine]
+    D --> E[Threat Correlation & Risk Scoring]
+    E --> F[MITRE ATT&CK Mapping]
+    F --> G[Dashboard / Analyst UI]
+    F --> H[Runbooks & Investigation Guidance]
+    G --> I[Reports / CSV / HTML / PDF]
+    H --> I
+```
+
+### Request lifecycle
+
+```mermaid
+sequenceDiagram
+    participant Analyst
+    participant UI as Web/Desktop UI
+    participant App as Log Analyzer App
+    participant Parser as Log Parser
+    participant Rules as Playbook Engine
+    participant DB as SQLite / Reporting
+
+    Analyst->>UI: Upload or load logs
+    UI->>App: Request analysis
+    App->>Parser: Parse log entries
+    Parser-->>App: Structured events
+    App->>Rules: Apply detection rules
+    Rules-->>App: Matches + severity + MITRE tags
+    App->>DB: Store findings and stats
+    App-->>UI: Dashboard update
+    UI-->>Analyst: Findings, summaries, reports
+```
+
+### Layer responsibilities
+
+| Layer | Responsibility |
+|---|---|
+| Input layer | Reads logs from files, local systems, and desktop collection sources |
+| Parsing layer | Normalizes timestamps, severities, sources, and event categories |
+| Detection layer | Applies playbook logic across authentication, web, network, and privilege misuse scenarios |
+| Correlation layer | Connects related events and identifies suspicious sequences |
+| Intelligence layer | Maps behaviors to ATT&CK-style tactics and operational context |
+| Presentation layer | Renders dashboard summaries and exports investigation reports |
+
+The architecture is intentionally simple and operational: the app focuses on reliable, explainable detection rather than opaque black-box automation.
 
 ---
 
 ## 🧪 Detection coverage
 
-The built-in playbook set includes logic for patterns such as:
+The project includes detection logic for patterns such as:
 
 - brute-force authentication attempts
 - successful logins after repeated failures
 - privilege escalation and admin misuse
 - unauthorized sudo or root activity
-- firewall port scanning and recon activity
-- web exploitation patterns including SQL injection and XSS
-- suspicious PowerShell execution and malware downloads
-- outbound transfer and possible exfiltration events
-- Suricata and Zeek anomaly signals
-- LDAP and network reconnaissance indicators
+- port scanning and reconnaissance
+- SQL injection and XSS patterns in web logs
+- suspicious PowerShell execution or malware delivery indicators
+- data exfiltration and large outbound transfer events
+- firewall intrusion alerts and suspicious SSL or network anomalies
+- LDAP enumeration and system access abuse patterns
 
-Many of these are tied to ATT&CK tactic IDs such as `T1110`, `T1068`, `T1190`, `T1041`, and related techniques.
+These are modeled as structured rule sets and mapped to applicable ATT&CK-style technique IDs when relevant.
 
 ---
 
 ## 🖥️ Using the interface
 
-### Web app
+### Web interface
 
-The Flask-based dashboard provides a browser interface for:
+The browser-based UI supports:
 
-- reviewing activity summaries
-- inspecting playbook matches
-- exploring risk trends and log categories
-- downloading or generating reports
-- switching playbook sets based on environment scope
+- reviewing security summaries
+- checking playbook matches
+- sampling risk trends by category
+- viewing activity context and findings
+- exporting operational reports
 
 ### Desktop GUI
 
-The desktop launcher enables local collection workflows and log-review tasks from a native GUI, including:
+The desktop launcher provides local collection and analysis flows for:
 
 - Windows Event Log collection
-- syslog-style log review
-- network activity collection
-- database-backed incident history
+- Syslog-based inspection
+- network connection summaries
+- log review and storage in SQLite
 
 ---
 
 ## 📄 Reporting and evidence output
 
-The system can generate operational outputs such as:
+The application is designed to generate useful operational artifacts such as:
 
-- summary dashboards
-- CSV exports
-- HTML investigation reports
-- PDF reports for presentation or stakeholder review
+- summary reports
+- CSV exports for further analysis
+- HTML investigation snapshots
+- PDF documents for stakeholder communication
 
-Reports are useful for escalations, forensic case reviews, and documenting SOC findings in a structured format.
+These outputs are especially valuable for SOC handoff, investigation documentation, compliance review, and incident follow-up.
 
 ---
 
@@ -224,10 +282,10 @@ This project is intended for:
 
 - internal security monitoring
 - defensive analysis
-- investigation support
+- incident investigation support
 - security automation research
 
-It should never be used for unauthorized monitoring, privacy violations, or malicious access. Always follow internal governance, security policy, and legal requirements before collecting or analyzing logs in production environments.
+It must not be used for unauthorized surveillance, privacy intrusion, or malicious activity. Follow internal policy, legal obligations, and governance requirements before collecting or analyzing log data in production environments.
 
 ---
 
@@ -235,28 +293,29 @@ It should never be used for unauthorized monitoring, privacy violations, or mali
 
 Planned improvements include:
 
-- broader correlation rules and machine-learning-assisted ranking
-- stronger live monitoring and alert tuning
-- more export formats and dashboard enhancements
-- better multi-environment deployment support
-- more advanced playbook configuration and user management
+- a broader and more adaptive playbook library
+- enhanced alert correlation and prioritization
+- real-time watchers for additional log sources
+- richer dashboard visualizations and drill-down views
+- stronger deployment packaging and configuration management
+- improved export and automation workflows for incident response teams
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome. If you want to improve detection logic, expand the integration set, create new playbooks, or refine reporting:
+Contributions are welcome. If you want to improve playbooks, expand platform coverage, strengthen detection logic, or refine the reporting workflow:
 
 1. Fork the repository
 2. Create a feature branch
-3. Implement your change
-4. submit a pull request with a clear description of the improvement
+3. Implement the improvement
+4. Submit a pull request with a clear description of the change
 
 ---
 
 ## ⚖️ Licensing
 
-This repository does not currently include a dedicated license file. Please review the repository policy and confirm the legal usage terms before production or commercial deployment.
+This repository does not currently include a dedicated license file. Please review repository policy and confirm legal usage constraints before production or commercial deployment.
 
 ---
 
