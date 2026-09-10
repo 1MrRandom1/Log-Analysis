@@ -1,0 +1,726 @@
+{
+  "schema": "1.0",
+  "generated_at": "2025-12-08T14:14:45.988479Z",
+  "runbooks": {
+    "PB-001": {
+      "title": "Runbook for Playbook 001 - Brute Force Detection",
+      "playbook_id": "PB-001",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 001 - Brute Force Detection.",
+        "Enumerate distinct usernames targeted and success rate.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Suggest adding rate-limiting and account lockout policies."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-002": {
+      "title": "Runbook for Playbook 002 - Suspicious Login Geography",
+      "playbook_id": "PB-002",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 002 - Suspicious Login Geography.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-003": {
+      "title": "Runbook for Playbook 003 - Admin Privilege Change",
+      "playbook_id": "PB-003",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 003 - Admin Privilege Change.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-004": {
+      "title": "Runbook for Playbook 004 - Sudo Abuse",
+      "playbook_id": "PB-004",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 004 - Sudo Abuse.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-005": {
+      "title": "Runbook for Playbook 005 - Port Scanning",
+      "playbook_id": "PB-005",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 005 - Port Scanning.",
+        "List top 20 destination ports contacted by the source IP.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Recommend network-level throttling and blocking."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-006": {
+      "title": "Runbook for Playbook 006 - Web App Recon",
+      "playbook_id": "PB-006",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 006 - Web App Recon.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-007": {
+      "title": "Runbook for Playbook 007 - Malware Download",
+      "playbook_id": "PB-007",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 007 - Malware Download.",
+        "Retrieve file hash and check local threat intelligence.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Run behavioral analysis on an isolated sandbox if possible."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-008": {
+      "title": "Runbook for Playbook 008 - PowerShell Obfuscation",
+      "playbook_id": "PB-008",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 008 - PowerShell Obfuscation.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-009": {
+      "title": "Runbook for Playbook 009 - Large Outbound Transfer",
+      "playbook_id": "PB-009",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 009 - Large Outbound Transfer.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-010": {
+      "title": "Runbook for Playbook 010 - Suricata High Alert",
+      "playbook_id": "PB-010",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 010 - Suricata High Alert.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-011": {
+      "title": "Runbook for Playbook 011 - Zeek SSL Anomaly",
+      "playbook_id": "PB-011",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 011 - Zeek SSL Anomaly.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-012": {
+      "title": "Runbook for Playbook 012 - RDP Brute Force",
+      "playbook_id": "PB-012",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 012 - RDP Brute Force.",
+        "Enumerate distinct usernames targeted and success rate.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Suggest adding rate-limiting and account lockout policies."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-013": {
+      "title": "Runbook for Playbook 013 - FTP Anonymous Access",
+      "playbook_id": "PB-013",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 013 - FTP Anonymous Access.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-014": {
+      "title": "Runbook for Playbook 014 - Samba Share Exfil",
+      "playbook_id": "PB-014",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 014 - Samba Share Exfil.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-015": {
+      "title": "Runbook for Playbook 015 - DNS Data Exfil",
+      "playbook_id": "PB-015",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 015 - DNS Data Exfil.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-016": {
+      "title": "Runbook for Playbook 016 - Unusual Process Spawn",
+      "playbook_id": "PB-016",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 016 - Unusual Process Spawn.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-017": {
+      "title": "Runbook for Playbook 017 - Scheduled Task Creation",
+      "playbook_id": "PB-017",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 017 - Scheduled Task Creation.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-018": {
+      "title": "Runbook for Playbook 018 - Credential Dumping Indicators",
+      "playbook_id": "PB-018",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 018 - Credential Dumping Indicators.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-019": {
+      "title": "Runbook for Playbook 019 - DLL Side-loading",
+      "playbook_id": "PB-019",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 019 - DLL Side-loading.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-020": {
+      "title": "Runbook for Playbook 020 - WAF Rule Trigger",
+      "playbook_id": "PB-020",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 020 - WAF Rule Trigger.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-021": {
+      "title": "Runbook for Playbook 021 - Cloud Console Anomaly",
+      "playbook_id": "PB-021",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 021 - Cloud Console Anomaly.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-022": {
+      "title": "Runbook for Playbook 022 - IAM Policy Change",
+      "playbook_id": "PB-022",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 022 - IAM Policy Change.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-023": {
+      "title": "Runbook for Playbook 023 - Container Escape Signals",
+      "playbook_id": "PB-023",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 023 - Container Escape Signals.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-024": {
+      "title": "Runbook for Playbook 024 - SSH Brute Force",
+      "playbook_id": "PB-024",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 024 - SSH Brute Force.",
+        "Enumerate distinct usernames targeted and success rate.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Suggest adding rate-limiting and account lockout policies."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-025": {
+      "title": "Runbook for Playbook 025 - Lateral SMB Access",
+      "playbook_id": "PB-025",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 025 - Lateral SMB Access.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-026": {
+      "title": "Runbook for Playbook 026 - Unexpected Service Install",
+      "playbook_id": "PB-026",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 026 - Unexpected Service Install.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-027": {
+      "title": "Runbook for Playbook 027 - USB Mass Storage Mount",
+      "playbook_id": "PB-027",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 027 - USB Mass Storage Mount.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-028": {
+      "title": "Runbook for Playbook 028 - Suspicious Registry Tamper",
+      "playbook_id": "PB-028",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 028 - Suspicious Registry Tamper.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-029": {
+      "title": "Runbook for Playbook 029 - Chrome Extension Malware",
+      "playbook_id": "PB-029",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 029 - Chrome Extension Malware.",
+        "Retrieve file hash and check local threat intelligence.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Run behavioral analysis on an isolated sandbox if possible."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-030": {
+      "title": "Runbook for Playbook 030 - Phishing Email Attachment",
+      "playbook_id": "PB-030",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 030 - Phishing Email Attachment.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-031": {
+      "title": "Runbook for Playbook 031 - Abnormal DB Queries",
+      "playbook_id": "PB-031",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 031 - Abnormal DB Queries.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-032": {
+      "title": "Runbook for Playbook 032 - Anomalous Time-of-Day Login",
+      "playbook_id": "PB-032",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 032 - Anomalous Time-of-Day Login.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-033": {
+      "title": "Runbook for Playbook 033 - API Abuse / Rate Limit",
+      "playbook_id": "PB-033",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 033 - API Abuse / Rate Limit.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-034": {
+      "title": "Runbook for Playbook 034 - Malicious Macro Activity",
+      "playbook_id": "PB-034",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 034 - Malicious Macro Activity.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-035": {
+      "title": "Runbook for Playbook 035 - Unsafe PowerShell Download",
+      "playbook_id": "PB-035",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 035 - Unsafe PowerShell Download.",
+        "Retrieve file hash and check local threat intelligence.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Run behavioral analysis on an isolated sandbox if possible."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-036": {
+      "title": "Runbook for Playbook 036 - Crypto-Miners Indicators",
+      "playbook_id": "PB-036",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 036 - Crypto-Miners Indicators.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-037": {
+      "title": "Runbook for Playbook 037 - Tor/Proxy Access",
+      "playbook_id": "PB-037",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 037 - Tor/Proxy Access.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-038": {
+      "title": "Runbook for Playbook 038 - Credential Spray",
+      "playbook_id": "PB-038",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 038 - Credential Spray.",
+        "Enumerate distinct usernames targeted and success rate.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Suggest adding rate-limiting and account lockout policies."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-039": {
+      "title": "Runbook for Playbook 039 - Web Shell Upload",
+      "playbook_id": "PB-039",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 039 - Web Shell Upload.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-040": {
+      "title": "Runbook for Playbook 040 - Known Bad Hash Match",
+      "playbook_id": "PB-040",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 040 - Known Bad Hash Match.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-041": {
+      "title": "Runbook for Playbook 041 - Reverse Shell Beaconing",
+      "playbook_id": "PB-041",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 041 - Reverse Shell Beaconing.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-042": {
+      "title": "Runbook for Playbook 042 - Abnormal DNS TXT Usage",
+      "playbook_id": "PB-042",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 042 - Abnormal DNS TXT Usage.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-043": {
+      "title": "Runbook for Playbook 043 - Egress to Suspicious AS",
+      "playbook_id": "PB-043",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 043 - Egress to Suspicious AS.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-044": {
+      "title": "Runbook for Playbook 044 - Shadow Admin Account",
+      "playbook_id": "PB-044",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 044 - Shadow Admin Account.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-045": {
+      "title": "Runbook for Playbook 045 - Fileless Malware Indicators",
+      "playbook_id": "PB-045",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 045 - Fileless Malware Indicators.",
+        "Retrieve file hash and check local threat intelligence.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Run behavioral analysis on an isolated sandbox if possible."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-046": {
+      "title": "Runbook for Playbook 046 - Unusual Binary Execution from Temp",
+      "playbook_id": "PB-046",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 046 - Unusual Binary Execution from Temp.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    },
+    "PB-047": {
+      "title": "Runbook for Playbook 047 - High Volume SMTP Outbound",
+      "playbook_id": "PB-047",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 047 - High Volume SMTP Outbound.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "High"
+    },
+    "PB-048": {
+      "title": "Runbook for Playbook 048 - Unexpected Port Forwarding",
+      "playbook_id": "PB-048",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 048 - Unexpected Port Forwarding.",
+        "List top 20 destination ports contacted by the source IP.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions.",
+        "Recommend network-level throttling and blocking."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Critical"
+    },
+    "PB-049": {
+      "title": "Runbook for Playbook 049 - Unauthorized DB Dump",
+      "playbook_id": "PB-049",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 049 - Unauthorized DB Dump.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Low"
+    },
+    "PB-050": {
+      "title": "Runbook for Playbook 050 - Potential Insider Data Hoarding",
+      "playbook_id": "PB-050",
+      "steps": [
+        "Confirm the trigger criteria for Playbook 050 - Potential Insider Data Hoarding.",
+        "Collect raw log lines that matched the rule.",
+        "Extract IOCs: IPs, hashes, URLs, user accounts, hostnames, ports.",
+        "Correlate with other sources (firewall, IDS, EDR) within \u00b115 minutes.",
+        "Assess impact and scope (number of hosts/users affected).",
+        "Recommend containment, eradication, and recovery actions."
+      ],
+      "estimated_time_minutes": 15,
+      "severity": "Medium"
+    }
+  }
+}

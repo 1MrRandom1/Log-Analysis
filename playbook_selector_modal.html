@@ -1,0 +1,146 @@
+<!-- Playbook Selector Modal (add to settings.html or create standalone) -->
+<div id="playbookSelectorModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Select Playbooks for Package</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Choose which playbooks to include in your portable package:</p>
+                <div id="playbookCheckboxes" class="row g-3">
+                    <!-- Checkboxes populated by JavaScript -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" onclick="generateSelectedPackage()">
+                    <i class="fas fa-download me-2"></i>Generate Package
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Load available playbooks for the selector
+async function loadPlaybookSelector() {
+    try {
+        const response = await fetch('/api/playbooks/active');
+        const data = await response.json();
+        
+        const container = document.getElementById('playbookCheckboxes');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        
+        // Add "All" option
+        container.innerHTML += `
+            <div class="col-md-6">
+                <div class="form-check">
+                    <input class="form-check-input playbook-checkbox" type="checkbox" 
+                           id="playbook_all" value="all" onchange="toggleAllPlaybooks(this)">
+                    <label class="form-check-label" for="playbook_all">
+                        <strong>All Playbooks</strong> (Select/Deselect all)
+                    </label>
+                </div>
+            </div>
+        `;
+        
+        // Add individual playbook options
+        data.available_types.forEach(ptype => {
+            if (ptype === 'all') return;
+            
+            const typeLabel = ptype.charAt(0).toUpperCase() + ptype.slice(1);
+            const icon = getPlaybookIcon(ptype);
+            
+            container.innerHTML += `
+                <div class="col-md-6">
+                    <div class="form-check">
+                        <input class="form-check-input playbook-checkbox" type="checkbox" 
+                               id="playbook_${ptype}" value="${ptype}">
+                        <label class="form-check-label" for="playbook_${ptype}">
+                            ${icon} ${typeLabel}
+                        </label>
+                    </div>
+                </div>
+            `;
+        });
+    } catch (error) {
+        console.error('Error loading playbooks:', error);
+    }
+}
+
+function getPlaybookIcon(ptype) {
+    const icons = {
+        'windows': '🪟',
+        'linux': '🐧',
+        'mac': '🍎',
+        'apache': '🔶',
+        'nginx': '⚙️',
+        'iis': '🪟',
+        'dns': '🔍',
+        'proxy': '🛡️',
+        'fortinet': '🔒',
+        'syslog': '📋',
+        'osfc': '🔧'
+    };
+    return icons[ptype] || '📦';
+}
+
+function toggleAllPlaybooks(checkbox) {
+    const checkboxes = document.querySelectorAll('.playbook-checkbox');
+    checkboxes.forEach(cb => {
+        if (cb.id !== 'playbook_all') {
+            cb.checked = checkbox.checked;
+        }
+    });
+}
+
+async function generateSelectedPackage() {
+    const checkboxes = document.querySelectorAll('.playbook-checkbox:checked');
+    const selected = Array.from(checkboxes)
+        .map(cb => cb.value)
+        .filter(v => v !== 'all');
+    
+    if (selected.length === 0) {
+        alert('Please select at least one playbook');
+        return;
+    }
+    
+    try {
+        const response = await fetch('/api/playbooks/package', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({ selected_types: selected })
+        });
+        
+        if (!response.ok) {
+            const error = await response.json();
+            throw new Error(error.error || 'Failed to generate package');
+        }
+        
+        // Download the file
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `plug_and_play_${selected.join('_')}.zip`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+        
+        // Close modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('playbookSelectorModal'));
+        modal.hide();
+        
+        alert(`✅ Package created with ${selected.join(', ').toUpperCase()} playbooks!`);
+    } catch (error) {
+        alert('❌ Error: ' + error.message);
+    }
+}
+
+// Initialize selector when page loads
+document.addEventListener('DOMContentLoaded', loadPlaybookSelector);
+</script>

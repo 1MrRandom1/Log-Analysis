@@ -1,0 +1,7 @@
+192.168.1.50 - - [09/Dec/2025:10:15:01 +0000] "GET /admin/login.php HTTP/1.1" 404 234 "-" "Mozilla/5.0"
+192.168.1.50 - - [09/Dec/2025:10:15:02 +0000] "GET /admin/config.php HTTP/1.1" 404 234 "-" "Mozilla/5.0"
+192.168.1.50 - - [09/Dec/2025:10:15:03 +0000] "GET /admin/users.php HTTP/1.1" 404 234 "-" "Mozilla/5.0"
+192.168.1.50 - - [09/Dec/2025:10:15:04 +0000] "GET /admin/database.php HTTP/1.1" 404 234 "-" "Mozilla/5.0"
+192.168.1.50 - - [09/Dec/2025:10:15:05 +0000] "GET /wp-admin/ HTTP/1.1" 404 234 "-" "Mozilla/5.0"
+192.168.1.50 - - [09/Dec/2025:10:15:06 +0000] "GET /phpmyadmin/ HTTP/1.1" 404 234 "-" "Mozilla/5.0"
+192.168.1.50 - - [09/Dec/2025:10:15:07 +0000] "GET /admin.php HTTP/1.1" 404 234 "-" "Mozilla/5.0"

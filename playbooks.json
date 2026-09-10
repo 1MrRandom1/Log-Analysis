@@ -1,0 +1,1980 @@
+{
+  "schema": "1.0",
+  "generated_at": "2025-12-08T14:14:45.987598Z",
+  "playbooks": [
+    {
+      "id": "PB-001",
+      "name": "Playbook 001 - Brute Force Detection",
+      "description": "Automated detection rule for Playbook 001 - Brute Force Detection.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "failed_threshold": 10,
+        "window_minutes": 5,
+        "group_by": [
+          "src_ip",
+          "username"
+        ]
+      },
+      "mitre": [
+        "T1110"
+      ],
+      "severity": "Low",
+      "category": "Authentication",
+      "tags": [
+        "auto-generated",
+        "authentication"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-002",
+      "name": "Playbook 002 - Suspicious Login Geography",
+      "description": "Automated detection rule for Playbook 002 - Suspicious Login Geography.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "impossible_travel": true,
+        "lookback_days": 7
+      },
+      "mitre": [
+        "T1078"
+      ],
+      "severity": "Medium",
+      "category": "Reconnaissance",
+      "tags": [
+        "auto-generated",
+        "reconnaissance"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-003",
+      "name": "Playbook 003 - Admin Privilege Change",
+      "description": "Automated detection rule for Playbook 003 - Admin Privilege Change.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1059"
+      ],
+      "severity": "High",
+      "category": "Execution",
+      "tags": [
+        "auto-generated",
+        "execution"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-004",
+      "name": "Playbook 004 - Sudo Abuse",
+      "description": "Automated detection rule for Playbook 004 - Sudo Abuse.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1105"
+      ],
+      "severity": "Critical",
+      "category": "Persistence",
+      "tags": [
+        "auto-generated",
+        "persistence"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-005",
+      "name": "Playbook 005 - Port Scanning",
+      "description": "Automated detection rule for Playbook 005 - Port Scanning.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "distinct_ports": 15,
+        "window_minutes": 2
+      },
+      "mitre": [
+        "T1027"
+      ],
+      "severity": "Low",
+      "category": "Privilege Escalation",
+      "tags": [
+        "auto-generated",
+        "privilege escalation"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-006",
+      "name": "Playbook 006 - Web App Recon",
+      "description": "Automated detection rule for Playbook 006 - Web App Recon.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1547"
+      ],
+      "severity": "Medium",
+      "category": "Lateral Movement",
+      "tags": [
+        "auto-generated",
+        "lateral movement"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-007",
+      "name": "Playbook 007 - Malware Download",
+      "description": "Automated detection rule for Playbook 007 - Malware Download.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "url_regex": "\\.(exe|msi|bat|ps1|dll)(\\?|$)",
+        "min_content_length": 0
+      },
+      "mitre": [
+        "T1574"
+      ],
+      "severity": "High",
+      "category": "Data Exfiltration",
+      "tags": [
+        "auto-generated",
+        "data exfiltration"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-008",
+      "name": "Playbook 008 - PowerShell Obfuscation",
+      "description": "Automated detection rule for Playbook 008 - PowerShell Obfuscation.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1041"
+      ],
+      "severity": "Critical",
+      "category": "Network",
+      "tags": [
+        "auto-generated",
+        "network"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-009",
+      "name": "Playbook 009 - Large Outbound Transfer",
+      "description": "Automated detection rule for Playbook 009 - Large Outbound Transfer.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "min_mb": 100,
+        "direction": "outbound"
+      },
+      "mitre": [
+        "T1190"
+      ],
+      "severity": "Low",
+      "category": "Web",
+      "tags": [
+        "auto-generated",
+        "web"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-010",
+      "name": "Playbook 010 - Suricata High Alert",
+      "description": "Automated detection rule for Playbook 010 - Suricata High Alert.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "min_alert_severity": 3
+      },
+      "mitre": [
+        "T1595"
+      ],
+      "severity": "Medium",
+      "category": "Malware",
+      "tags": [
+        "auto-generated",
+        "malware"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-011",
+      "name": "Playbook 011 - Zeek SSL Anomaly",
+      "description": "Automated detection rule for Playbook 011 - Zeek SSL Anomaly.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1086"
+      ],
+      "severity": "High",
+      "category": "IDS",
+      "tags": [
+        "auto-generated",
+        "ids"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-012",
+      "name": "Playbook 012 - RDP Brute Force",
+      "description": "Automated detection rule for Playbook 012 - RDP Brute Force.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "failed_threshold": 10,
+        "window_minutes": 5,
+        "group_by": [
+          "src_ip",
+          "username"
+        ]
+      },
+      "mitre": [
+        "T1053"
+      ],
+      "severity": "Critical",
+      "category": "Authentication",
+      "tags": [
+        "auto-generated",
+        "authentication"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-013",
+      "name": "Playbook 013 - FTP Anonymous Access",
+      "description": "Automated detection rule for Playbook 013 - FTP Anonymous Access.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1071"
+      ],
+      "severity": "Low",
+      "category": "Reconnaissance",
+      "tags": [
+        "auto-generated",
+        "reconnaissance"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-014",
+      "name": "Playbook 014 - Samba Share Exfil",
+      "description": "Automated detection rule for Playbook 014 - Samba Share Exfil.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1496"
+      ],
+      "severity": "Medium",
+      "category": "Execution",
+      "tags": [
+        "auto-generated",
+        "execution"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-015",
+      "name": "Playbook 015 - DNS Data Exfil",
+      "description": "Automated detection rule for Playbook 015 - DNS Data Exfil.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "min_mb": 100,
+        "direction": "outbound"
+      },
+      "mitre": [
+        "T1055"
+      ],
+      "severity": "High",
+      "category": "Persistence",
+      "tags": [
+        "auto-generated",
+        "persistence"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-016",
+      "name": "Playbook 016 - Unusual Process Spawn",
+      "description": "Automated detection rule for Playbook 016 - Unusual Process Spawn.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1490"
+      ],
+      "severity": "Critical",
+      "category": "Privilege Escalation",
+      "tags": [
+        "auto-generated",
+        "privilege escalation"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-017",
+      "name": "Playbook 017 - Scheduled Task Creation",
+      "description": "Automated detection rule for Playbook 017 - Scheduled Task Creation.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1204"
+      ],
+      "severity": "Low",
+      "category": "Lateral Movement",
+      "tags": [
+        "auto-generated",
+        "lateral movement"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-018",
+      "name": "Playbook 018 - Credential Dumping Indicators",
+      "description": "Automated detection rule for Playbook 018 - Credential Dumping Indicators.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1486"
+      ],
+      "severity": "Medium",
+      "category": "Data Exfiltration",
+      "tags": [
+        "auto-generated",
+        "data exfiltration"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-019",
+      "name": "Playbook 019 - DLL Side-loading",
+      "description": "Automated detection rule for Playbook 019 - DLL Side-loading.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "Tactics-Discovery"
+      ],
+      "severity": "High",
+      "category": "Network",
+      "tags": [
+        "auto-generated",
+        "network"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-020",
+      "name": "Playbook 020 - WAF Rule Trigger",
+      "description": "Automated detection rule for Playbook 020 - WAF Rule Trigger.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "min_alert_severity": 3
+      },
+      "mitre": [
+        "Tactic-Persistence"
+      ],
+      "severity": "Critical",
+      "category": "Web",
+      "tags": [
+        "auto-generated",
+        "web"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-021",
+      "name": "Playbook 021 - Cloud Console Anomaly",
+      "description": "Automated detection rule for Playbook 021 - Cloud Console Anomaly.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1110"
+      ],
+      "severity": "Low",
+      "category": "Malware",
+      "tags": [
+        "auto-generated",
+        "malware"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-022",
+      "name": "Playbook 022 - IAM Policy Change",
+      "description": "Automated detection rule for Playbook 022 - IAM Policy Change.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1078"
+      ],
+      "severity": "Medium",
+      "category": "IDS",
+      "tags": [
+        "auto-generated",
+        "ids"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-023",
+      "name": "Playbook 023 - Container Escape Signals",
+      "description": "Automated detection rule for Playbook 023 - Container Escape Signals.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1059"
+      ],
+      "severity": "High",
+      "category": "Authentication",
+      "tags": [
+        "auto-generated",
+        "authentication"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-024",
+      "name": "Playbook 024 - SSH Brute Force",
+      "description": "Automated detection rule for Playbook 024 - SSH Brute Force.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "failed_threshold": 10,
+        "window_minutes": 5,
+        "group_by": [
+          "src_ip",
+          "username"
+        ]
+      },
+      "mitre": [
+        "T1105"
+      ],
+      "severity": "Critical",
+      "category": "Reconnaissance",
+      "tags": [
+        "auto-generated",
+        "reconnaissance"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-025",
+      "name": "Playbook 025 - Lateral SMB Access",
+      "description": "Automated detection rule for Playbook 025 - Lateral SMB Access.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1027"
+      ],
+      "severity": "Low",
+      "category": "Execution",
+      "tags": [
+        "auto-generated",
+        "execution"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-026",
+      "name": "Playbook 026 - Unexpected Service Install",
+      "description": "Automated detection rule for Playbook 026 - Unexpected Service Install.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1547"
+      ],
+      "severity": "Medium",
+      "category": "Persistence",
+      "tags": [
+        "auto-generated",
+        "persistence"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-027",
+      "name": "Playbook 027 - USB Mass Storage Mount",
+      "description": "Automated detection rule for Playbook 027 - USB Mass Storage Mount.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1574"
+      ],
+      "severity": "High",
+      "category": "Privilege Escalation",
+      "tags": [
+        "auto-generated",
+        "privilege escalation"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-028",
+      "name": "Playbook 028 - Suspicious Registry Tamper",
+      "description": "Automated detection rule for Playbook 028 - Suspicious Registry Tamper.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1041"
+      ],
+      "severity": "Critical",
+      "category": "Lateral Movement",
+      "tags": [
+        "auto-generated",
+        "lateral movement"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-029",
+      "name": "Playbook 029 - Chrome Extension Malware",
+      "description": "Automated detection rule for Playbook 029 - Chrome Extension Malware.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1190"
+      ],
+      "severity": "Low",
+      "category": "Data Exfiltration",
+      "tags": [
+        "auto-generated",
+        "data exfiltration"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-030",
+      "name": "Playbook 030 - Phishing Email Attachment",
+      "description": "Automated detection rule for Playbook 030 - Phishing Email Attachment.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "attachment_extension": [
+          "doc",
+          "docm",
+          "xlsm",
+          "zip",
+          "exe"
+        ]
+      },
+      "mitre": [
+        "T1595"
+      ],
+      "severity": "Medium",
+      "category": "Network",
+      "tags": [
+        "auto-generated",
+        "network"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-031",
+      "name": "Playbook 031 - Abnormal DB Queries",
+      "description": "Automated detection rule for Playbook 031 - Abnormal DB Queries.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1086"
+      ],
+      "severity": "High",
+      "category": "Web",
+      "tags": [
+        "auto-generated",
+        "web"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-032",
+      "name": "Playbook 032 - Anomalous Time-of-Day Login",
+      "description": "Automated detection rule for Playbook 032 - Anomalous Time-of-Day Login.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1053"
+      ],
+      "severity": "Critical",
+      "category": "Malware",
+      "tags": [
+        "auto-generated",
+        "malware"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-033",
+      "name": "Playbook 033 - API Abuse / Rate Limit",
+      "description": "Automated detection rule for Playbook 033 - API Abuse / Rate Limit.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1071"
+      ],
+      "severity": "Low",
+      "category": "IDS",
+      "tags": [
+        "auto-generated",
+        "ids"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-034",
+      "name": "Playbook 034 - Malicious Macro Activity",
+      "description": "Automated detection rule for Playbook 034 - Malicious Macro Activity.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1496"
+      ],
+      "severity": "Medium",
+      "category": "Authentication",
+      "tags": [
+        "auto-generated",
+        "authentication"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-035",
+      "name": "Playbook 035 - Unsafe PowerShell Download",
+      "description": "Automated detection rule for Playbook 035 - Unsafe PowerShell Download.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "url_regex": "\\.(exe|msi|bat|ps1|dll)(\\?|$)",
+        "min_content_length": 0
+      },
+      "mitre": [
+        "T1055"
+      ],
+      "severity": "High",
+      "category": "Reconnaissance",
+      "tags": [
+        "auto-generated",
+        "reconnaissance"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-036",
+      "name": "Playbook 036 - Crypto-Miners Indicators",
+      "description": "Automated detection rule for Playbook 036 - Crypto-Miners Indicators.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1490"
+      ],
+      "severity": "Critical",
+      "category": "Execution",
+      "tags": [
+        "auto-generated",
+        "execution"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-037",
+      "name": "Playbook 037 - Tor/Proxy Access",
+      "description": "Automated detection rule for Playbook 037 - Tor/Proxy Access.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1204"
+      ],
+      "severity": "Low",
+      "category": "Persistence",
+      "tags": [
+        "auto-generated",
+        "persistence"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-038",
+      "name": "Playbook 038 - Credential Spray",
+      "description": "Automated detection rule for Playbook 038 - Credential Spray.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "failed_threshold": 10,
+        "window_minutes": 5,
+        "group_by": [
+          "src_ip",
+          "username"
+        ]
+      },
+      "mitre": [
+        "T1486"
+      ],
+      "severity": "Medium",
+      "category": "Privilege Escalation",
+      "tags": [
+        "auto-generated",
+        "privilege escalation"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-039",
+      "name": "Playbook 039 - Web Shell Upload",
+      "description": "Automated detection rule for Playbook 039 - Web Shell Upload.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "Tactics-Discovery"
+      ],
+      "severity": "High",
+      "category": "Lateral Movement",
+      "tags": [
+        "auto-generated",
+        "lateral movement"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-040",
+      "name": "Playbook 040 - Known Bad Hash Match",
+      "description": "Automated detection rule for Playbook 040 - Known Bad Hash Match.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "hash_match": true
+      },
+      "mitre": [
+        "Tactic-Persistence"
+      ],
+      "severity": "Critical",
+      "category": "Data Exfiltration",
+      "tags": [
+        "auto-generated",
+        "data exfiltration"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-041",
+      "name": "Playbook 041 - Reverse Shell Beaconing",
+      "description": "Automated detection rule for Playbook 041 - Reverse Shell Beaconing.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1110"
+      ],
+      "severity": "Low",
+      "category": "Network",
+      "tags": [
+        "auto-generated",
+        "network"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-042",
+      "name": "Playbook 042 - Abnormal DNS TXT Usage",
+      "description": "Automated detection rule for Playbook 042 - Abnormal DNS TXT Usage.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1078"
+      ],
+      "severity": "Medium",
+      "category": "Web",
+      "tags": [
+        "auto-generated",
+        "web"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-043",
+      "name": "Playbook 043 - Egress to Suspicious AS",
+      "description": "Automated detection rule for Playbook 043 - Egress to Suspicious AS.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "min_mb": 100,
+        "direction": "outbound"
+      },
+      "mitre": [
+        "T1059"
+      ],
+      "severity": "High",
+      "category": "Malware",
+      "tags": [
+        "auto-generated",
+        "malware"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-044",
+      "name": "Playbook 044 - Shadow Admin Account",
+      "description": "Automated detection rule for Playbook 044 - Shadow Admin Account.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1105"
+      ],
+      "severity": "Critical",
+      "category": "IDS",
+      "tags": [
+        "auto-generated",
+        "ids"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-045",
+      "name": "Playbook 045 - Fileless Malware Indicators",
+      "description": "Automated detection rule for Playbook 045 - Fileless Malware Indicators.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1027"
+      ],
+      "severity": "Low",
+      "category": "Authentication",
+      "tags": [
+        "auto-generated",
+        "authentication"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-046",
+      "name": "Playbook 046 - Unusual Binary Execution from Temp",
+      "description": "Automated detection rule for Playbook 046 - Unusual Binary Execution from Temp.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1547"
+      ],
+      "severity": "Medium",
+      "category": "Reconnaissance",
+      "tags": [
+        "auto-generated",
+        "reconnaissance"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-047",
+      "name": "Playbook 047 - High Volume SMTP Outbound",
+      "description": "Automated detection rule for Playbook 047 - High Volume SMTP Outbound.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1574"
+      ],
+      "severity": "High",
+      "category": "Execution",
+      "tags": [
+        "auto-generated",
+        "execution"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-048",
+      "name": "Playbook 048 - Unexpected Port Forwarding",
+      "description": "Automated detection rule for Playbook 048 - Unexpected Port Forwarding.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "distinct_ports": 15,
+        "window_minutes": 2
+      },
+      "mitre": [
+        "T1041"
+      ],
+      "severity": "Critical",
+      "category": "Persistence",
+      "tags": [
+        "auto-generated",
+        "persistence"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-049",
+      "name": "Playbook 049 - Unauthorized DB Dump",
+      "description": "Automated detection rule for Playbook 049 - Unauthorized DB Dump.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1190"
+      ],
+      "severity": "Low",
+      "category": "Privilege Escalation",
+      "tags": [
+        "auto-generated",
+        "privilege escalation"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-050",
+      "name": "Playbook 050 - Potential Insider Data Hoarding",
+      "description": "Automated detection rule for Playbook 050 - Potential Insider Data Hoarding.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog",
+        "firewall",
+        "http",
+        "dns",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {},
+      "mitre": [
+        "T1595"
+      ],
+      "severity": "Medium",
+      "category": "Lateral Movement",
+      "tags": [
+        "auto-generated",
+        "lateral movement"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate host if infected",
+        "Block IP at firewall",
+        "Force password reset for involved accounts",
+        "Enable multi-factor authentication"
+      ]
+    },
+    {
+      "id": "PB-051",
+      "name": "Playbook 051 - DNS Tunneling",
+      "description": "Detect excessive long-domain TXT/NULL queries suggesting tunneling.",
+      "event_types": [
+        "dns",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "min_query_length": 60,
+        "txt_record_threshold": 15,
+        "window_minutes": 10
+      },
+      "mitre": [
+        "T1071.004"
+      ],
+      "severity": "High",
+      "category": "Command and Control",
+      "tags": [
+        "dns",
+        "c2",
+        "exfil"
+      ],
+      "version": "1.1",
+      "remediation": [
+        "Block suspicious domains at DNS resolver",
+        "Capture and decode payload for investigation",
+        "Rotate affected credentials"
+      ]
+    },
+    {
+      "id": "PB-052",
+      "name": "Playbook 052 - Periodic Beaconing",
+      "description": "Detect low-and-slow outbound beacons with consistent intervals.",
+      "event_types": [
+        "firewall",
+        "ids",
+        "zeek",
+        "suricata"
+      ],
+      "conditions": {
+        "min_sessions": 8,
+        "interval_seconds_min": 20,
+        "interval_seconds_max": 90,
+        "dst_port_not_in": [80, 443]
+      },
+      "mitre": [
+        "T1071"
+      ],
+      "severity": "Critical",
+      "category": "Command and Control",
+      "tags": [
+        "beacon",
+        "c2",
+        "network"
+      ],
+      "version": "1.1",
+      "remediation": [
+        "Block destination IPs",
+        "Capture full PCAP for the host",
+        "Isolate host pending malware cleanup"
+      ]
+    },
+    {
+      "id": "PB-053",
+      "name": "Playbook 053 - Cloud IAM Privilege Spike",
+      "description": "Detect sudden privilege grants to cloud service accounts.",
+      "event_types": [
+        "http",
+        "ids"
+      ],
+      "conditions": {
+        "role_change": true,
+        "elevated_roles": ["Administrator", "Owner", "IAMFullAccess"],
+        "window_minutes": 15
+      },
+      "mitre": [
+        "T1098"
+      ],
+      "severity": "High",
+      "category": "Persistence",
+      "tags": [
+        "cloud",
+        "iam",
+        "privilege"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Revoke the added roles",
+        "Review API keys and rotate",
+        "Enable MFA and alerts on IAM changes"
+      ]
+    },
+    {
+      "id": "PB-054",
+      "name": "Playbook 054 - Ransomware Note Drop",
+      "description": "Detect rapid creation of ransom note filenames across hosts.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog"
+      ],
+      "conditions": {
+        "filenames_like": ["*HOW_TO_DECRYPT*.txt", "*README*.txt", "*RECOVER_FILES*.txt"],
+        "min_hosts": 3,
+        "window_minutes": 5
+      },
+      "mitre": [
+        "T1486"
+      ],
+      "severity": "Critical",
+      "category": "Impact",
+      "tags": [
+        "ransomware",
+        "impact"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Isolate impacted hosts",
+        "Disable SMB shares",
+        "Begin incident response playbook for ransomware"
+      ]
+    },
+    {
+      "id": "PB-055",
+      "name": "Playbook 055 - Suspicious Archive Exfiltration",
+      "description": "Detect large archive transfers leaving the environment.",
+      "event_types": [
+        "firewall",
+        "http",
+        "ids"
+      ],
+      "conditions": {
+        "direction": "outbound",
+        "min_mb": 500,
+        "file_types": ["zip", "7z", "rar", "gz"],
+        "dst_not_in_cidr": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"]
+      },
+      "mitre": [
+        "T1048"
+      ],
+      "severity": "High",
+      "category": "Exfiltration",
+      "tags": [
+        "exfil",
+        "archive",
+        "data"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Block outbound transfer",
+        "Quarantine archive for review",
+        "Notify data owners"
+      ]
+    },
+    {
+      "id": "PB-056",
+      "name": "Playbook 056 - Removable Media Mass Write",
+      "description": "Detect abnormal mass file writes to removable media.",
+      "event_types": [
+        "windows_event",
+        "linux_syslog"
+      ],
+      "conditions": {
+        "device_type": "removable",
+        "min_files": 200,
+        "window_minutes": 10
+      },
+      "mitre": [
+        "T1052"
+      ],
+      "severity": "Medium",
+      "category": "Exfiltration",
+      "tags": [
+        "usb",
+        "removable",
+        "data"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Eject and retain the device",
+        "Block removable media at policy",
+        "Collect file hashes for review"
+      ]
+    },
+    {
+      "id": "PB-057",
+      "name": "Playbook 057 - SQL Injection Burst",
+      "description": "Detect repeated SQL error responses indicating injection attempts.",
+      "event_types": [
+        "http",
+        "ids",
+        "suricata"
+      ],
+      "conditions": {
+        "http_status": [500, 501, 503],
+        "error_keywords": ["sql syntax", "odbc", "mysql", "pg_query"],
+        "min_hits": 20,
+        "window_minutes": 3
+      },
+      "mitre": [
+        "T1190"
+      ],
+      "severity": "High",
+      "category": "Web",
+      "tags": [
+        "sql",
+        "injection",
+        "web"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Block offending IP",
+        "Enable WAF rules for injection",
+        "Review application logs for exploitation"
+      ]
+    },
+    {
+      "id": "PB-058",
+      "name": "Playbook 058 - Cryptomining Process",
+      "description": "Detect common cryptominer binaries and outbound pool connections.",
+      "event_types": [
+        "linux_syslog",
+        "windows_event",
+        "firewall"
+      ],
+      "conditions": {
+        "process_regex": "(xmrig|minerd|ethminer|cpuminer)",
+        "dst_port_in": [3333, 4444, 5555, 7777],
+        "min_cpu_percent": 70
+      },
+      "mitre": [
+        "T1496"
+      ],
+      "severity": "Medium",
+      "category": "Resource Development",
+      "tags": [
+        "crypto",
+        "mining",
+        "resource"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Kill mining process",
+        "Block pool domains",
+        "Reimage if persistence detected"
+      ]
+    },
+    {
+      "id": "PB-059",
+      "name": "Playbook 059 - Suspicious OAuth Consent",
+      "description": "Detect high-privilege OAuth consent to untrusted apps.",
+      "event_types": [
+        "http",
+        "dns"
+      ],
+      "conditions": {
+        "scopes": ["Mail.ReadWrite", "Directory.ReadWrite.All", "Files.ReadWrite.All"],
+        "new_app": true,
+        "consent_window_minutes": 10
+      },
+      "mitre": [
+        "T1550"
+      ],
+      "severity": "High",
+      "category": "Credential Access",
+      "tags": [
+        "oauth",
+        "cloud",
+        "consent"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Revoke OAuth grant",
+        "Force password reset",
+        "Alert users to phishing risk"
+      ]
+    },
+    {
+      "id": "PB-060",
+      "name": "Playbook 060 - Kerberos Ticket Anomalies",
+      "description": "Detect unusual TGT lifetime or encryption types suggestive of ticket forgery.",
+      "event_types": [
+        "windows_event",
+        "ids"
+      ],
+      "conditions": {
+        "ticket_lifetime_hours_gt": 10,
+        "encryption_type_not_in": ["AES256", "AES128"],
+        "ticket_options_flags": ["forwardable", "renewable"]
+      },
+      "mitre": [
+        "T1558"
+      ],
+      "severity": "Critical",
+      "category": "Credential Access",
+      "tags": [
+        "kerberos",
+        "ticket",
+        "forgery"
+      ],
+      "version": "1.0",
+      "remediation": [
+        "Invalidate suspicious tickets",
+        "Rotate krbtgt twice",
+        "Audit DC for replication abuse"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+Dec  9 10:30:01 server sshd[12345]: Failed password for root from 203.0.113.45 port 52143 ssh2
+Dec  9 10:30:03 server sshd[12346]: Failed password for root from 203.0.113.45 port 52144 ssh2
+Dec  9 10:30:05 server sshd[12347]: Failed password for root from 203.0.113.45 port 52145 ssh2
+Dec  9 10:30:07 server sshd[12348]: Failed password for root from 203.0.113.45 port 52146 ssh2
+Dec  9 10:30:09 server sshd[12349]: Failed password for root from 203.0.113.45 port 52147 ssh2
+Dec  9 10:30:11 server sshd[12350]: Accepted password for root from 203.0.113.45 port 52148 ssh2

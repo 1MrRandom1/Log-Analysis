@@ -1,0 +1,25 @@
+[2025-12-09 10:15:23.456] INFO DLM: node-02 lock granted LKM_MODE_PR for lock 0x00012345
+[2025-12-09 10:15:45.123] WARNING HEARTBEAT: node-01 missed heartbeat from node-03
+[2025-12-09 10:16:02.789] ERROR RECOVERY: recovery for node-04 failed - inconsistent state detected
+[2025-12-09 10:16:15.345] INFO CLUSTER: all nodes synchronized - quorum established
+[2025-12-09 10:16:30.567] DEBUG DLM: lock timeout detected for resource /mnt/ocfs2/shared_data
+[2025-12-09 10:16:45.234] CRITICAL QUORUM: lost quorum - minority partition detected
+[2025-12-09 10:17:01.890] ERROR DLM: deadlock detected in lock wait queue
+[2025-12-09 10:17:15.456] WARNING NETWORK: connection timeout to node-05
+[2025-12-09 10:17:30.123] INFO FSCK: filesystem check in progress on /dev/sda1
+[2025-12-09 10:17:45.789] ERROR INODE: inode corruption detected at block 4096
+[2025-12-09 10:18:00.345] CRITICAL DLM: node eviction triggered for node-01
+[2025-12-09 10:18:15.567] WARNING DISKSPACE: out of space condition - ENOSPC error
+[2025-12-09 10:18:30.234] INFO RECOVERY: recovery completed successfully - all nodes back online
+[2025-12-09 10:18:45.890] ERROR PERMISSION: permission denied - EACCES on resource /mnt/ocfs2/admin_data
+[2025-12-09 10:19:00.456] INFO HEARTBEAT: heartbeat restored with node-03
+2025-12-09 10:19:15 ERROR NETWORK: Network unreachable from node-02 to cluster
+2025-12-09 10:19:30 WARNING DLM: dlm lock timeout occurred - waiting for recovery
+2025-12-09 10:19:45 CRITICAL FSCK: bad block group descriptor found during scan
+2025-12-09 10:20:00 INFO CLUSTER: cluster split detected - entering minority partition mode
+2025-12-09 10:20:15 ERROR CORRUPTION: bad inode 12345 in inode table
+[2025-12-09 10:20:30.123] INFO DLM: lock deadlock resolution in progress
+[2025-12-09 10:20:45.234] WARNING HEARTBEAT: heartbeat loss threshold approaching
+[2025-12-09 10:21:00.345] ERROR RECOVERY: recovery failed - unable to recover lost node state
+[2025-12-09 10:21:15.456] CRITICAL QUORUM: no quorum - cluster halted
+[2025-12-09 10:21:30.567] INFO FSCK: checksum failure detected - filesystem inconsistent

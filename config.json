@@ -1,0 +1,24 @@
+{
+  "enabled_playbooks": [],
+  "watch_directories": [
+    "uploads"
+  ],
+  "analysis_settings": {
+    "enable_real_time": true,
+    "batch_size": 100,
+    "analysis_interval": 5
+  },
+  "report_settings": {
+    "auto_generate": true,
+    "format": "pdf",
+    "output_directory": "reports"
+  },
+  "database": {
+    "path": "log_collector.db"
+  },
+  "web_interface": {
+    "host": "0.0.0.0",
+    "port": 5000,
+    "debug": false
+  }
+}
